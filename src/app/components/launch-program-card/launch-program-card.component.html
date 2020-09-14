@@ -1,0 +1,57 @@
+<div class="card" [class]="{ 'h-100': programLength > 4 }">
+  <div class="card-body justify-content-center">
+    <img
+      [src]="
+        program?.links?.mission_patch ||
+        'https://via.placeholder.com/200x200.png?text=Program%20Logo%20Not%20Found'
+      "
+      class="card-img-top img-fluid img-thumbnail"
+      alt="Program Logo"
+    />
+    <h5 class="card-title">
+      <!-- <div class="row">
+        <div class="col-8 text-truncate">
+          {{ program.mission_name }}
+        </div>
+        <div class="col-4">#{{ program.mission_name }}</div>
+      </div> -->
+      {{ program.mission_name }} #{{ program.flight_number }}
+    </h5>
+    <div class="card-section">
+      <label class="card-label" for="mission-ids">Mission IDs: </label>
+      <span
+        *ngIf="program.mission_id.length == 0; else missionIds"
+        id="mission-ids"
+        name="mission-ids"
+        class="text-data"
+      >
+        -NA-
+      </span>
+      <ng-template #missionIds>
+        <ul class="card-ul" id="mission-ids" name="mission-ids">
+          <li class="text-data" *ngFor="let Ids of program.mission_id">
+            {{ Ids }}
+          </li>
+        </ul>
+      </ng-template>
+    </div>
+    <div class="card-section">
+      <label class="card-label" for="mission-ids"> Launch Year:&nbsp; </label>
+      <span class="text-data">{{ program.launch_year }}</span>
+    </div>
+    <div class="card-section">
+      <label class="card-label" for="Launch"> Successful Launch:&nbsp; </label>
+      <span id="Launch" class="text-data">
+        {{ program.launch_success ? "Yes" : "No" }}
+      </span>
+    </div>
+    <div class="card-section">
+      <label class="card-label" for="Landing">
+        Successful Landing:&nbsp;
+      </label>
+      <span id="Landing" class="text-data">
+        {{ program.rocket?.first_stage?.cores[0].land_success ? "Yes" : "No" }}
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.badge {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.badge-pill {
+  padding-right: 1em;
+  padding-left: 1em;
+  border-radius: 0.5rem;
+}
+
+.badge-inactive {
+  color: #000000;
+  background-color: #c9dfa2;
+  cursor: pointer;
+}
+
+.badge-active {
+  color: #000000;
+  background-color: #88b738;
+  cursor: pointer;
+}

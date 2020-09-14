@@ -1,0 +1,20 @@
+<div class="row justify-content-md-center h-100">
+  <div
+    *ngIf="(dataService.programs | async).length == 0; else cardsView"
+    class="col-sm-12 col-md-12 col-lg-12"
+    role="status"
+  >
+    <div class="p-2 mb-2 bg-info text-white text-center">No Data Found</div>
+  </div>
+  <ng-template #cardsView>
+    <div
+      class="col-sm-12 col-md-6 col-lg-3"
+      *ngFor="let program of dataService.programs | async; let i = index"
+    >
+      <app-launch-program-card
+        [programLength]="(dataService.programs | async).length"
+        [program]="program"
+      ></app-launch-program-card>
+    </div>
+  </ng-template>
+</div>
