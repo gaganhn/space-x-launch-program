@@ -13,6 +13,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Responsive Design - Mobile first design
 - Deployment - deployed to [Heroku](https://www.heroku.com/) CI/CD implemented with master branch of this repo
 
+## Lighthouse Score for this project
+
+![Lighthouse Score Screenshot](/Screenshot%202020-09-14%20at%2011.41.35%20PM.png)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
